@@ -1,0 +1,112 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package no5_uas;
+abstract class Animal {
+    protected int legs;
+    protected Animal (int legs){
+        this.legs = legs;
+    }
+    abstract void eat();
+    public void walk () {
+        System.out.println("Hewan ini berjalan dengan " + legs + "kaki.");
+    }
+    private static class protect {
+
+        public protect() {
+        }
+    }    
+}
+class Spider extends Animal {
+    public Spider () {
+        super (8);
+    }
+    @Override
+    public void eat () {
+        System.out.println("Laba-Laba memakan lalat");
+    }
+}
+interface Pet {
+    public String getName();
+    public void setName (String n);
+    public void play ();
+}
+class Cat extends Animal implements Pet {
+    private String name;
+    public Cat (String n) {
+        super (4);
+        name = n;
+    }
+    public Cat() {
+        this("");
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public void setName (String n) {
+        name = n;
+    }
+    @Override
+    public void play () {
+        System.out.println(name + " suka main boneka ikan.");
+    }
+    @Override
+    public void eat () {
+        System.out.println("Kucing suka makan daging.");
+    }
+
+    private static class play {
+
+        public play() {
+        }
+    }
+}
+class Fish extends Animal implements Pet {
+    private String name;
+    public Fish () {
+        super (0);
+    }
+    @Override
+    public void setName (String name) {
+        this.name = name;
+    }
+    @Override
+    public String getName () {
+        return name;
+    }
+    @Override
+    public void play () {
+        System.out.println("Ikan berenang di dalam aquarium.");
+    }
+    @Override
+    public void walk () {
+        super.walk();
+        System.out.println("Ikan tidak berjalan, melainkan berenang.");
+    }
+    @Override
+    public void eat () {
+        System.out.println("Ikan memakan lumut.");
+    }
+}
+public class Program {
+    public static void main (String[] args) {
+        Fish f = new Fish();
+        Cat c = new Cat("Anabul");
+        Animal x = new Fish();
+        Animal y = new Cat ();
+        Animal z = new Spider();
+        
+        f.play();
+        c.play();
+        
+        x.eat();
+        y.eat();
+        z.eat();
+        
+        y.walk();
+        x.walk();
+    }
+}
