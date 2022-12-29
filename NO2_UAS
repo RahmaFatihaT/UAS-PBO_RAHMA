@@ -1,0 +1,104 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package no2_uas;
+
+/**
+ *
+ * @author RAHMA FATIHA TAUCHID
+ */
+class Person{
+    private String Nama;
+    private String Alamat;
+    private int Umur;
+    
+    public Person(){ 
+    }
+    public Person(String Nama, String Alamat, int Umur){
+        this.Nama = Nama;
+        this.Alamat = Alamat;
+        this.Umur = Umur;
+    }
+    public String getNama(){
+        return Nama;
+    }
+    public String getAlamat(){
+        return Alamat;
+    }
+    public int getUmur(){
+        return Umur;
+    }
+    public void setNama(String Nama){
+        this.Nama = Nama;
+    }
+    public void setAlamat(String Alamat){
+        this.Alamat = Alamat;
+    }
+    public void setUmur(int Umur){
+        this.Umur = Umur;
+    }
+    public void infoPerson() {
+        System.out.println("\nInfo Person");
+        System.out.println("Nama\t\t: " + getNama());
+        System.out.println("Alamat\t\t: " + getAlamat());
+        System.out.println("Umur\t\t: " + getUmur());
+    }
+}
+class Dosen extends Person{
+    private String idDosen;
+    public Dosen(){
+    }
+    public Dosen(String Nama, String Alamat, int Umur, String idDosen){
+        super(Nama, Alamat, Umur);
+        this.idDosen = idDosen;
+    }
+    public String getIdDosen(){
+        return idDosen;
+    }
+    public void setIdDosen(String idDosen){
+        this.idDosen = idDosen;
+    }
+    public void infoDosen(){
+        System.out.println("\nInfo Dosen");
+        System.out.println("idDosen\t\t: " + getIdDosen());
+        System.out.println("Nama\t\t: " + getNama());
+        System.out.println("Alamat\t\t: " + getAlamat());
+        System.out.println("Umur\t\t: " + getUmur());
+    }
+}
+class Mahasiswa extends Person{
+    private String NIM;
+    public Mahasiswa(){
+    }
+    public Mahasiswa(String Nama, String Alamat, int Umur, String NIM){
+        super(Nama, Alamat, Umur);
+        this.NIM = NIM;
+    }
+    public String getNIM(){
+        return NIM;
+    }
+    public void setNIM(String NIM){
+        this.NIM = NIM;
+    }
+    public void infoMahasiswa(){
+        System.out.println("\nInfo Mahasiswa");
+        System.out.println("NIM\t\t: " + getNIM());
+        System.out.println("Nama\t\t: " + getNama());
+        System.out.println("Alamat\t\t: " + getAlamat());
+        System.out.println("Umur\t\t: " + getUmur());
+    }
+}
+class program{
+    public static void main(String[] args){
+        Person a = new Person("Rahma","Gresik",21);
+        a.infoPerson();
+        
+        Dosen b = new Dosen("Fatimah","Surabaya",56,"D.15.10");
+        b.infoDosen();
+        
+        Mahasiswa c = new Mahasiswa("Haikal","Lamongan",19,"21051214003");
+        c.infoMahasiswa();
+        System.out.println("==============================================");
+    }
+}
